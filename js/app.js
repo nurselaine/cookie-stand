@@ -11,23 +11,20 @@ let storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2p
 let salePage = document.getElementById('sales-page');
 // create an object for Seattle 
 let seattle = {
+  location: 'Seattle',
   minCustomer: 23,
   maxCustomer: 65,
   avgCookie: 6.3,
   hourlyCookieSold: [],
+  totalCookiesSold: 0,
 
   // create method to generate random number of cookies and return values in an array
   soldCookies: function(){
     for (let i = 0; i < storeHours.length; i++){
       let numberOfCustomer = randomCustomer(this.minCustomer, this.maxCustomer);
       this.hourlyCookieSold.push(Math.round(numberOfCustomer * this.avgCookie));
-    }
-  },
-  // create method to find sum of hourly cookies sold 
-  totalCookiesSold: function(){
-    let sum = 0;
-    for (let i; i < this.hourlyCookieSold.length; i++){
-      sum += this.hourlyCookieSold[i];
+      console.log(this.hourlyCookieSold);
+      this.totalCookiesSold += this.hourlyCookieSold[i];
     }
   },
 
@@ -35,6 +32,10 @@ let seattle = {
   render: function(){
     let articleElem = document.createElement('article'); // create element from DOM
     salePage.appendChild(articleElem); // add to DOM 
+
+    let h1Elem = document.createElement('h1');
+    h1Elem.textContent = `${this.location}`;
+    articleElem.appendChild(h1Elem);
 
     // add ul and li elements
     let ulElem = document.createElement('ul');
@@ -45,6 +46,9 @@ let seattle = {
       liElem.textContent = `${storeHours[i]}: ${this.hourlyCookieSold[i]} cookies`;
       ulElem.appendChild(liElem);
     }
+    let liElem = document.createElement('li');
+    liElem.textContent = `Total: ${this.totalCookiesSold}`;
+    ulElem.appendChild(liElem);
   
   }
 
@@ -58,5 +62,6 @@ function randomCustomer(min, max){
 // console.log(seattle.soldCookies());
 // console.log('hourlyCookieSold: ' + seattle.hourlyCookieSold);
 seattle.soldCookies();
+// seattle.getTotalCookies();
+console.log("total cookies " + seattle.totalCookiesSold);
 seattle.render();
-console.log(seattle.totalCookiesSold);
