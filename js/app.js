@@ -208,4 +208,49 @@ let paris = {
 paris.soldCookies();
 paris.render();
 
-// 
+// Add city of Lima min 2	max 16	avg 4.6 sales 
+let lima = {
+  location: 'Lima',
+  minCustomer: 3,
+  maxCustomer: 24,
+  avgCookie: 1.2,
+  hourlyCookieSold: [],
+  totalCookiesSold: 0,
+
+  // create method to generate random number of cookies and return values in an array
+  soldCookies: function(){
+    for (let i = 0; i < storeHours.length; i++){
+      let numberOfCustomer = randomCustomer(this.minCustomer, this.maxCustomer);
+      this.hourlyCookieSold.push(Math.round(numberOfCustomer * this.avgCookie));
+      console.log(this.hourlyCookieSold);
+      this.totalCookiesSold += this.hourlyCookieSold[i];
+    }
+  },
+
+  // Render to browser method
+  render: function(){
+    let articleElem = document.createElement('article'); // create element from DOM
+    salePage.appendChild(articleElem); // add to DOM 
+
+    let h1Elem = document.createElement('h1');
+    h1Elem.textContent = `${this.location}`;
+    articleElem.appendChild(h1Elem);
+
+    // add ul and li elements
+    let ulElem = document.createElement('ul');
+    articleElem.append(ulElem);
+    for (let i = 0; i < this.hourlyCookieSold.length; i++){
+      let liElem = document.createElement('li');
+      // let liString = `${storeHours[i]}: ${this.hourlyCookieSold[i]} cookies`
+      liElem.textContent = `${storeHours[i]}: ${this.hourlyCookieSold[i]} cookies`;
+      ulElem.appendChild(liElem);
+    }
+    let liElem = document.createElement('li');
+    liElem.textContent = `Total: ${this.totalCookiesSold}`;
+    ulElem.appendChild(liElem);
+  
+  }
+
+};
+lima.soldCookies();
+lima.render();
