@@ -1,32 +1,5 @@
 # cookie-stand
 Help salmon cookie business calculate the number of cookies each location must make every day to manage its supplies inventory and baking schedule. 
-<<<<<<< HEAD
-=======
-
-Lab: Salmon Cookies
-Read this lab assignment in its entirety before beginning your lab. You may want to open it in a new tab.
-
-Problem Domain
-Your friend Pat has come up with a business idea by combining two signature Seattle icons: Pat has developed a recipe for a coffee-time confection called Salmon Cookies. These cookies made into the shape of a salmon that has just a hint of fishy goodness.
-
-Pat needs some help with the branding of the business, as well as some help with internal data management for the company, and has enlisted your assistance because of your extensive and proven work in developing web applications.
-
-Pat’s Salmon Cookies, soon with franchises internationally, needs to calculate the number of cookies each location must make every day so that it can manage its supplies inventory and baking schedule. The number of cookies to make depends on the hours of operation (6:00 AM to 8:00 PM for all locations) and a few factors unique to each location:
-
-The minimum number of customers per hour.
-The maximum number of customers per hour.
-The average number of cookies purchased per customer.
-Because we are early in the life of this business, we will need to build an application that is adaptable. Pat will need to be able to add and remove locations from the daily projections report, and Pat will also need to be able to easily modify the input numbers for each location based on day of the week, special events, and other factors. Pat would like to see these numbers with nice formatting in a web application.
-
-Pat needs you to take a leading role in doing the design work and construction of a public-facing page, too. They already have a logo image picked out (below), but Pat is requesting your assistance in the design of the documents, color scheme, fonts, and any additional images for the public facing site.
-
-A salmon
-
-So, in addition to building an application that calculates daily sales projections for each location (on a page called sales.html), you also need to create a public-facing page (on the homepage index.html) that is colorful, eye-catching, readable, useful, and informative.
-
-You’ve got a lot to do. Plan your work, and work your plan.
-
->>>>>>> de0ee30323658ba9a84b403f704be163d3980943
 Instructions
 Before you begin, create a new repository within GitHub callled “cookie-stand”. Make sure that this repository is propertly set up with a license and a readme. Clone this repo down to your local machine
 
@@ -64,11 +37,7 @@ Display the lists on sales.html. We will be adding features to this application 
 Here are the starting numbers that you’ll need to build these objects:
 
 Location	Min / Cust	Max / Cust	Avg Cookie / Sale
-<<<<<<< HEAD
 Seattle	23	65	6.3
-=======
-Seattle	      23	        65	            6.3
->>>>>>> de0ee30323658ba9a84b403f704be163d3980943
 Tokyo	3	24	1.2
 Dubai	11	38	3.7
 Paris	20	38	2.3
@@ -111,9 +80,6 @@ Read this article, this article, and this article on the differences between low
 
 Create a low-fidelity wireframe of what you want the page to look like.
 
-<<<<<<< HEAD
-Create a high-fidelity wireframe of what you want your page to look like.
-=======
 Create a high-fidelity wireframe of what you want your page to look like.
 
 Resources
@@ -124,4 +90,3 @@ Add a comment to this Canvas submission with answers to the following questions
 How did this go, overall?
 What observations or questions do you have about what you’ve learned so far?
 How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?
->>>>>>> de0ee30323658ba9a84b403f704be163d3980943
