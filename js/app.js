@@ -68,7 +68,7 @@ function thead(){
 thead();
 
 // each cookie stand should have it's own render method
-Citysales.prototype.renderSeattle = function(){
+Citysales.prototype.render = function(){
 
   let trElem2 = document.createElement('tr'); // 2nd row for seattle sales
   tableElem.appendChild(trElem2);
@@ -86,88 +86,22 @@ Citysales.prototype.renderSeattle = function(){
   trElem2.appendChild(tdElemSeattle);
 }
 
-Citysales.prototype.renderTokyo = function(){
-
-  let trElem3 = document.createElement('tr'); // 2nd row for Tokyo sales
-  tableElem.appendChild(trElem3);
-  let tdElemTokyo = document.createElement('td');
-  tdElemTokyo.textContent = this.location;
-  trElem3.appendChild(tdElemTokyo);
-
-  for(let j = 0; j < this.hourlyCookieSold.length; j++){ // td for hourly sales
-    tdElemTokyo = document.createElement('td');
-    tdElemTokyo.textContent = this.hourlyCookieSold[j];
-    trElem3.appendChild(tdElemTokyo);
-  }
-  tdElemTokyo.textContent = this.totalCookiesSold;
-    trElem3.appendChild(tdElemTokyo);
-}
-
-Citysales.prototype.renderDubai = function(){
-
-  let trElem4 = document.createElement('tr'); // 2nd row for Dubai sales
-  tableElem.appendChild(trElem4);
-  let tdElemDubai = document.createElement('td');
-  tdElemDubai.textContent = this.location;
-  trElem4.appendChild(tdElemDubai);
-
-  for(let j = 0; j < this.hourlyCookieSold.length; j++){ // td for hourly sales
-    tdElemDubai = document.createElement('td');
-    tdElemDubai.textContent = this.hourlyCookieSold[j];
-    trElem4.appendChild(tdElemDubai);
-  }
-  tdElemDubai.textContent = this.totalCookiesSold;
-  trElem4.appendChild(tdElemDubai);
-}
-
-Citysales.prototype.renderParis = function(){
-
-  let trElem5 = document.createElement('tr'); // 2nd row for Dubai sales
-  tableElem.appendChild(trElem5);
-  let tdElemParis = document.createElement('td');
-  tdElemParis.textContent = this.location;
-  trElem5.appendChild(tdElemParis);
-
-  for(let j = 0; j < this.hourlyCookieSold.length; j++){ // td for hourly sales
-    tdElemParis = document.createElement('td');
-    tdElemParis.textContent = this.hourlyCookieSold[j];
-    trElem5.appendChild(tdElemParis);
-  }
-  tdElemParis.textContent = this.totalCookiesSold;
-  trElem5.appendChild(tdElemParis);
-}
-
-Citysales.prototype.renderLima = function(){
-
-  let trElem6 = document.createElement('tr'); // 2nd row for Dubai sales
-  tableElem.appendChild(trElem6);
-  let tdElemLima = document.createElement('td');
-  tdElemLima.textContent = this.location;
-  trElem6.appendChild(tdElemLima);
-
-  for(let j = 0; j < this.hourlyCookieSold.length; j++){ // td for hourly sales
-    tdElemLima = document.createElement('td');
-    tdElemLima.textContent = this.hourlyCookieSold[j];
-    trElem6.appendChild(tdElemLima);
-  }
-  tdElemLima.textContent = this.totalCookiesSold;
-  trElem6.appendChild(tdElemLima);
-}
-
 // Add stretch goal for last footer row
 function footer(){
-  let trElem7 = document.createElement('tr');
-  tableElem.appendChild(trElem7);
+  let trElem3 = document.createElement('tr');
+  tableElem.appendChild(trElem3);
   let tdElemFooter = document.createElement('tfoot');
   tdElemFooter.textContent = 'Totals';
-  trElem7.appendChild(tdElemFooter);
+  trElem3.appendChild(tdElemFooter);
 
   // get daily totals of all store cookie sales per hour
-  for (let i = 0; i < sales.length; i++){
+  for (let i = 0; i < storeHours.length; i++){
+    tdElemFooter = document.createElement('td');
+    tdElemFooter.textContent = 'hello'; // just testing
+    trElem3.appendChild(tdElemFooter);
   }
 } 
 footer();
-
 
 // find hourly cookies sold 
 function totalHourlySales(){
@@ -188,14 +122,9 @@ new Citysales('Lima', 2, 16, 46);
 function renderAllSales(){
   for (let i = 0; i < sales.length; i++){
     sales[i].soldCookies();
+    sales[i].render();
     // console.log('render');
     console.log(sales[i].totalCookiesSold);
   }
 }
 renderAllSales();
-// is there a better way to do this?
-sales[0].renderSeattle();
-sales[1].renderTokyo();
-sales[2].renderDubai();
-sales[3].renderParis();
-sales[4].renderLima();
