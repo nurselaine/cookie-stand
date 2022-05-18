@@ -5,3 +5,9 @@ table {
 tr {
   border: 1px black solid;
 }
+
+td {
+  border: 1px black solid;
+  text-align: center;
+  padding: 10px 20px;
+}
