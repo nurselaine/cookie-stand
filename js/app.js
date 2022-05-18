@@ -120,14 +120,6 @@ function footer(){
 
 } 
 
-// find hourly cookies sold 
-function totalHourlySales(){
-  // use sales array to access city objects
-  // each city object stores hourly cookie array 
-  // use the array from each city to find the hourly sum off all the cities 
-  // store sums in an array 
-}
-
 // instantiate sales for seattle
 new Citysales('Seattle', 23, 65, 6.3);
 new Citysales('Tokyo', 3, 24, 1.2);

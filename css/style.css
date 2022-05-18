@@ -11,3 +11,39 @@ td {
   text-align: center;
   padding: 10px 20px;
 }
+
+body {
+  margin: 0px 10px;
+}
+
+navbar p{
+  display: inline;
+  font-size: 2em;
+  font-family: 'leckerli One', serif;
+}
+
+navbar a{
+  float: right;
+  margin-left: 40px;
+  font-size: 1.5em;
+  font-family: 'Noto Sams', sans-serif;
+}
+
+img {
+  position: relative;
+  width: 100vw;
+  height: 50vw;
+  margin: auto;
+  opacity: 0.5;
+}
+
+div p{
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  color:rgb(44, 43, 43);
+  font-size: 50px;
+  font-family: 'Belgrano', sans-serif;
+  display: inline;
+
+}
