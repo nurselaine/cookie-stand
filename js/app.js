@@ -88,20 +88,37 @@ Citysales.prototype.render = function(){
 
 // Add stretch goal for last footer row
 function footer(){
-  let trElem3 = document.createElement('tr');
-  tableElem.appendChild(trElem3);
-  let tdElemFooter = document.createElement('tfoot');
-  tdElemFooter.textContent = 'Totals';
-  trElem3.appendChild(tdElemFooter);
-
-  // get daily totals of all store cookie sales per hour
-  for (let i = 0; i < storeHours.length; i++){
-    tdElemFooter = document.createElement('td');
-    tdElemFooter.textContent = 'hello'; // just testing
-    trElem3.appendChild(tdElemFooter);
+  let tfoot = document.createElement('tfoot');
+  tableElem.appendChild(tfoot);
+  let trFoot = document.createElement('tr');
+  tfoot.appendChild(trFoot);
+  let tdFoot = document.createElement('td');
+  tdFoot.textContent = 'Totals';
+  trFoot.appendChild(tdFoot);
+  let hourlySales = 0;
+  let totalStoreSales = 0;
+  let hourlySalesArray = [];
+  // find daily totals of hourly sales 
+  for(let i = 0; i < storeHours.length; i++){
+      // console.log(sales[j].hourlyCookieSold[0]);
+    for (let j = 0; j < sales.length; j++){
+      hourlySales += sales[j].hourlyCookieSold[i];
+      totalStoreSales += sales[j].hourlyCookieSold[i];
+    }
+    hourlySalesArray.push(hourlySales);
+    hourlySales = 0;
   }
+  // console.log(hourlySalesArray);
+  // add array of hourly sales to td elements
+  for (let n = 0; n < hourlySalesArray.length; n++){
+    tdFoot = document.createElement('td');
+    tdFoot.textContent = hourlySalesArray[n];
+    trFoot.appendChild(tdFoot);
+  }
+  tdFoot.textContent = totalStoreSales;
+  trFoot.appendChild(tdFoot);
+
 } 
-footer();
 
 // find hourly cookies sold 
 function totalHourlySales(){
@@ -124,7 +141,8 @@ function renderAllSales(){
     sales[i].soldCookies();
     sales[i].render();
     // console.log('render');
-    console.log(sales[i].totalCookiesSold);
+    // console.log(sales[i].totalCookiesSold);
   }
 }
 renderAllSales();
+footer();
