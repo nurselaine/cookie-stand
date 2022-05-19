@@ -204,8 +204,76 @@ article p{
 }
 
 .merch-link{
+  justify-content: center;
+}
+
+.merch a:hover{
+  color:#c9ada7;
+  border:#c9ada7;
+}
+
+.merch-img{
   width: 100px;
   height: 150px;
+}
+
+/* form styling */
+
+form{
+  margin: auto;
+  margin-top: 30px;
+  padding: 2rem;
+  width: 70%;
+  border-radius: 5px;
+  background-color: #9a8c98;
+  border: 2px solid;
+  border-color: #22223b;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  text-align: center;
+}
+
+form legend{
+  font-family: 'Suez One', sans-serif;
+  color:#22223b;
+  font-size: 1.5rem;
+}
+
+label{
+  font-family: 'Suez One', sans-serif;
+  font-size: 1rem;
+  text-shadow: 5px 5px 10px #22223b;
+  color:#22223b;
+  display: inline-block;
+  margin: 15px 0px;
+}
+
+label[for="city"]{
+  margin-top: 30%;
+}
+
+input[type="text"]{
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 0.5rem 0.75rem;
+  margin: auto;
+  border-radius: 2px;
+}
+
+input[type="number"]{
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 0.5rem 0.75rem;
+  margin: auto;
+  border-radius: 2px;
+}
+
+button {
+  margin-top: 15px;
 }
 
 footer {

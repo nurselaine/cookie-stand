@@ -1,17 +1,3 @@
-/*
-Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called
- with the ‘new’ keyword, it creates a new instance.
-
- Replace the lists of your data for each store and build a single table of data instead. 
- It should look similar to the following:
-
- Each cookie stand location should have a separate render() method that creates and appends its row to the table
-
- The header row and footer row are each created in their own stand-alone function
-  NOTE: Please use a header cell for both the header row ( containing store hours ), and the 
-  footer row ( hourly and grand totals across all stores ).
-*/
-
 let storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let salePage = document.getElementById('sales-page');
 let tableElem = document.getElementById('sales-table'); // table container
@@ -42,22 +28,21 @@ function Citysales(location, minCustomer, maxCustomer, avgCookie){
 Citysales.prototype.soldCookies = function(){
   for (let i = 0; i < storeHours.length; i++){
     let numberOfCustomer = randomCustomer(this.minCustomer, this.maxCustomer);
-    this.hourlyCookieSold.push(Math.round(numberOfCustomer * this.avgCookie));
+    this.hourlyCookieSold.push(Math.ceil(numberOfCustomer * this.avgCookie));
     // console.log(this.hourlyCookieSold);
     this.totalCookiesSold += this.hourlyCookieSold[i];
   }
 }
 
 // create stand alone function for header and foot row for table
-function thead(){
-  
-let thead = document.createElement('thead');
-tableElem.appendChild(thead);
-let trElem1 = document.createElement('tr'); // header row 
-thead.appendChild(trElem1);
-let thElem = document.createElement('th');
-thElem.textContent = 'City'; // add extra cell for city
-trElem1.appendChild(thElem);
+function thead(){  
+  let thead = document.createElement('thead');
+  tableElem.appendChild(thead);
+  let trElem1 = document.createElement('tr'); // header row 
+  thead.appendChild(trElem1);
+  let thElem = document.createElement('th');
+  thElem.textContent = 'City'; // add extra cell for city
+  trElem1.appendChild(thElem);
 
   for (let i = 0; i < storeHours.length; i++){ // display store hours row
     thElem = document.createElement('th');
@@ -88,8 +73,14 @@ Citysales.prototype.render = function(){
   trElem2.appendChild(tdElemSeattle);
 }
 
-// Add stretch goal for last footer row
+// last footer row
 function footer(){
+  // add variables
+  let hourlySales = 0;
+  let totalStoreSales = 0;
+  let hourlySalesArray = [];
+
+  // create footer
   let tfoot = document.createElement('tfoot');
   tableElem.appendChild(tfoot);
   let trFoot = document.createElement('tr');
@@ -97,9 +88,7 @@ function footer(){
   let tdFoot = document.createElement('td');
   tdFoot.textContent = 'Totals';
   trFoot.appendChild(tdFoot);
-  let hourlySales = 0;
-  let totalStoreSales = 0;
-  let hourlySalesArray = [];
+
   // find daily totals of hourly sales 
   for(let i = 0; i < storeHours.length; i++){
       // console.log(sales[j].hourlyCookieSold[0]);
@@ -110,7 +99,8 @@ function footer(){
     hourlySalesArray.push(hourlySales);
     hourlySales = 0;
   }
-  // console.log(hourlySalesArray);
+  console.log(hourlySalesArray);
+  console.log(totalStoreSales);
   // add array of hourly sales to td elements
   for (let n = 0; n < hourlySalesArray.length; n++){
     tdFoot = document.createElement('td');
@@ -119,8 +109,8 @@ function footer(){
   }
   tdFoot.textContent = totalStoreSales;
   trFoot.appendChild(tdFoot);
-
 } 
+
 
 // instantiate sales for seattle
 new Citysales('Seattle', 23, 65, 6.3);
@@ -140,3 +130,42 @@ function renderAllSales(){
 }
 renderAllSales();
 footer();
+
+// create event handler for form
+let form = document.getElementById('form');
+form.addEventListener('submit', handleSubmit);
+
+// this method handles submit
+let newStore = {};
+function handleSubmit(event){
+  event.preventDefault();
+
+  let city = event.target.city.value;
+  let minCustomer = +event.target.minCust.value;
+  let maxCustomer = +event.target.maxCust.value;
+  let averageCookie = +event.target.avgCookie.value;
+
+  test(city, minCustomer, maxCustomer, averageCookie);
+
+  console.log(sales);
+}
+// sales.push(newStore);
+// console.log(sales);
+
+function test(city, minCustomer, maxCustomer, averageCookie){
+  for(let i = 0; i < sales.length; i++){
+    if (sales[i].location.toLowerCase() === city.toLowerCase()){
+      console.log('hello');
+      alert('City location taken.');
+      form.reset();
+      return;
+    } 
+  }
+    tableElem.deleteRow(-1);
+    newStore = new Citysales(city, minCustomer, maxCustomer, averageCookie);
+    newStore.soldCookies();
+    console.log(newStore.hourlyCookieSold);
+    newStore.render();
+    footer();
+    form.reset();
+};
