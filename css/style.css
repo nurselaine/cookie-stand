@@ -118,6 +118,8 @@ section article{
 h2{
   margin-bottom: 10px;
   font-size: 30px;
+  text-align: center;
+  font-family: 'Suez One', sans-serif;
 }
 
 b {
@@ -183,7 +185,7 @@ div a:hover{
   margin-bottom: 30px;
 } 
 
-article h2{
+ article h2{
   font-family: 'Suez One', sans-serif;
   font-size: 25px;
   text-align: center;
@@ -194,37 +196,17 @@ article p{
   margin: 0px 15px 30px 15px;
   font-family: 'Noto Sams', sans-serif;
   color:#22223b
-} */
+} 
 
-figure{
-  float: left;
-  display: inline;
-  height: 200px;
-  width: 50%;
+.merch{
+  display: flex;
+  flex-direction: row;
 }
 
-figure img{
-  height: 100px;
-  width: 10vw;
-  margin-left: 200px;
+.merch-link{
+  width: 100px;
+  height: 150px;
 }
-
-figcaption{
-  font-family: 'Suez One', serif;
-  font-size: 15px;
-  color:#22223b;
-  margin-left: 100px;
-}
-
-figcaption a:link{
-  text-decoration: none;
-  color: #22223b;
-}
-
-figcaption a:hover{
-  color: #c9ada7;
-}
-
 
 footer {
   height: 100px;
@@ -233,7 +215,14 @@ footer {
   margin-bottom: 0px;
   border-radius: 2px;
   position: relative;
-  
+  display: flex;
+}
+
+footer p{
+  font-family: 'Noto Sams', sans-serif;
+  color:#22223b;
+  font-size: 10px;
+  margin: 0;
 }
 
 footer img {
