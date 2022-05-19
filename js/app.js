@@ -51,11 +51,13 @@ Citysales.prototype.soldCookies = function(){
 // create stand alone function for header and foot row for table
 function thead(){
   
-  let trElem1 = document.createElement('tr'); // header row 
-  tableElem.appendChild(trElem1);
-  let thElem = document.createElement('th');
-  thElem.textContent = 'City'; // add extra cell for city
-  trElem1.appendChild(thElem);
+let thead = document.createElement('thead');
+tableElem.appendChild(thead);
+let trElem1 = document.createElement('tr'); // header row 
+thead.appendChild(trElem1);
+let thElem = document.createElement('th');
+thElem.textContent = 'City'; // add extra cell for city
+trElem1.appendChild(thElem);
 
   for (let i = 0; i < storeHours.length; i++){ // display store hours row
     thElem = document.createElement('th');
