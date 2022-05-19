@@ -35,6 +35,26 @@ location (on a page called sales.html), you also need to create a public-facing 
     <div id="sales-page">
       <table id="sales-table"></table>
     </div>
+    <form id="form">
+      <fieldset>
+        <legend>Add Your Cookie Stand</legend>
+        <label for="city">Location</label><br>
+        <input type="text" id="city" name="city"><br>
+        <!-- items needed for new city submission -->
+      </fieldset>
+      <fieldset>
+        <legend>Add Cookie Stand Information</legend>
+        <label for="minCust">Minimum Customers Estimate</label><br>
+        <input type="number" id="minCust" name="minCust"><br>
+        
+        <label for="maxCust">Maximum Customer Estimate</label><br>
+        <input type="number" id="maxCust" name="maxCust"><br>
+    
+        <label for="avgCookie">Average Cookie Sales</label><br>
+        <input type="number" step="0.1" id="avgCookie" name="avgCookie"><br>
+        <button value="submit" value="submit">Submit</button>
+      </fieldset>
+    </form>
   <!-- page break with salmon -->
   <section>
     <ul>
@@ -45,18 +65,19 @@ location (on a page called sales.html), you also need to create a public-facing 
   </section>
     <!-- Website Merch and required pictures -->
     <article>
-      <h2>Support Our Business</h2>
+      <h2>Support Our Business<br>Buy Our Merch!</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, eaque odio? Eius aperiam qui reprehenderit, delectus facilis fuga veritatis suscipit? Odit quos, delectus soluta debitis incidunt accusamus voluptatum rem ipsa.
       Suscipit tempore aut eaque voluptatem beatae error reprehenderit nam, pariatur animi veritatis quisquam quam, dolorum, nemo delectus optio consequatur nisi non? Temporibus libero inventore voluptatem itaque iste rerum autem maxime?</p>
     </article>
-    <article>
-      <div>
-        <a href="https://www.redbubble.com/i/t-shirt/Sockeye-Salmon-by-lureguru/34988409.IJ6L0?country_code=US&gclid=Cj0KCQjwspKUBhCvARIsAB2IYuuAeq8GyxYzIdASs8AemrnFq6Qnx4mJXB_f-szNx5d2kxn3rZ34tOYaArCFEALw_wcB&gclsrc=aw.ds"><img src="./img/shirt.jpg" alt="salmon graphic t-shirt" class="merch-link"></a>
+    <article class="merch">
+      <div class="merch-link">
+        <a href="https://www.redbubble.com/i/t-shirt/Sockeye-Salmon-by-lureguru/34988409.IJ6L0?country_code=US&gclid=Cj0KCQjwspKUBhCvARIsAB2IYuuAeq8GyxYzIdASs8AemrnFq6Qnx4mJXB_f-szNx5d2kxn3rZ34tOYaArCFEALw_wcB&gclsrc=aw.ds"><img src="./img/shirt.jpg" alt="salmon graphic t-shirt" title="Salmon Graphic T-Shirt" class="merch-img"></a>
       </div>
-      <div>
-        <a href="https://www.amazon.com/Ann-Clark-Cookie-Cutters-Cutter/dp/B00KJ8LOYO/ref=asc_df_B00KJ8LOYO/?tag=hyprod-20&linkCode=df0&hvadid=167140474467&hvpos=&hvnetw=g&hvrand=5060344311289123656&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9033259&hvtargid=pla-309740784420&psc=1"><img src="./img/cutter.jpeg" alt="salmon cookie cutter" class="merch-link"></a>
+      <div class="merch-link">
+        <a href="https://www.amazon.com/Ann-Clark-Cookie-Cutters-Cutter/dp/B00KJ8LOYO/ref=asc_df_B00KJ8LOYO/?tag=hyprod-20&linkCode=df0&hvadid=167140474467&hvpos=&hvnetw=g&hvrand=5060344311289123656&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9033259&hvtargid=pla-309740784420&psc=1"><img src="./img/cutter.jpeg" alt="salmon cookie cutter" title="Salmon Cookie Cutter" class="merch-img"></a>
       </div>
     </article>
+
   </main>
   <footer>
     <div>
