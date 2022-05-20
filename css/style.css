@@ -1,4 +1,5 @@
 table {
+  background-color:#fcf4d8;
 }
 
 th {
@@ -18,7 +19,7 @@ td {
 body {
   background-image: linear-gradient(to bottom right, #ccdbdc, #fcf4d8);
   height: 100%;
-  margin: 0px 10px;
+  margin: 0px 60px;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -43,22 +44,14 @@ nav p{
   float: left;
   display: inline;
   font-size: 2em;
-  font-family: 'leckerli One', serif;
-}
-
-nav img {
-  position: absolute;
-  top: 30px;
-  left: 20px;
-  width: 80px;
-  height: 30px;
+  font-family: 'leckerli One';
 }
 
 nav ul{
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
+  width: 70%;
 }
 nav li{
   margin: auto;
@@ -85,12 +78,11 @@ img {
 
 div p{
   Position: absolute;
-  left: 5vw;
+  left: 10vw;
   top: 35vw;
   color:#f2e9e4;
   font-size: 80px;
   font-weight: 400;
-  text-align: center;
   font-family: 'Suez One', sans-serif;
   display: inline;
   color:#22223b;
@@ -242,18 +234,12 @@ div article{
   grid-row-end: 5;
 }
 
-
-/* sales page break */
-
- ul img{
-  flex-direction: row;
-  width: 30%;
-  height: 100px;
-  margin: auto;
-  margin-bottom: 30px;
-} 
-
 /* sales merch */
+
+.merch-article{
+  background-color: #fcf4d8;
+  border-radius: 2px;
+}
 
  article h2{
   font-family: 'Suez One', sans-serif;
@@ -292,6 +278,7 @@ article p{
 form{
   margin: auto;
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 2rem;
   width: 70%;
   border-radius: 5px;
