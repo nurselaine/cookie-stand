@@ -177,6 +177,74 @@ div a:hover{
   overflow: scroll;
 } 
 
+/* Photo Gallery - practice with grid */
+
+div article{
+  font-family: 'Suez One', sans-serif;
+  font-size: 6vw;
+  text-align: center;
+  color:#22223b;
+  margin-left: 35%;
+  margin-bottom: 30px;
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 15vw);
+  grid-gap: 15px;
+}
+
+.gallery_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery_item-1{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery_item-2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.gallery_item-3{
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.gallery_item-4{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 6;
+}
+
+.gallery_item-5{
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.gallery_item-7{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+
+/* sales page break */
+
  ul img{
   flex-direction: row;
   width: 30%;
@@ -184,6 +252,8 @@ div a:hover{
   margin: auto;
   margin-bottom: 30px;
 } 
+
+/* sales merch */
 
  article h2{
   font-family: 'Suez One', sans-serif;
